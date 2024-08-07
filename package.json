@@ -1,28 +1,22 @@
 {
-  "name": "file-icons",
+  "name": "file-icons-monorepo",
   "version": "0.1.0",
-  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && npm run build:lib && npm run build:dts",
-    "build:lib": "vite build",
-    "build:dts": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
+    "dev": "npm run --prefix packages/preview dev",
+    "build": "npm run --prefix packages/file-icons build",
     "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.1.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.40",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
     "postcss-import": "^16.1.0",
-    "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "0.4.1",
-    "sass": "^1.77.8",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.4",
-    "vue-tsc": "^2.0.29"
-  },
-  "resolutions": {
-    "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "0.4.1"
+    "sass": "^1.77.8"
   }
 }

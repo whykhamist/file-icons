@@ -5,14 +5,10 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "skipLibCheck": true,
     "strict": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "outDir": "./dist",
-    "declarationDir": "./dist/types"
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "dist-prev"]
+  "include": ["vite.config.ts", "src/**/*.vue", "src/**/*.ts"]
 }

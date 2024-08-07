@@ -1,0 +1,33 @@
+{
+  "name": "file-icons-preview",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:dts",
+    "build:dts": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@whykhamist/file-icons": "*",
+    "fuse.js": "^7.0.0",
+    "vue": "^3.4.31"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "postcss-import": "^16.1.0",
+    "prettier": "2.8.8",
+    "prettier-plugin-tailwindcss": "0.4.1",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4",
+    "vue-tsc": "^2.0.24"
+  },
+  "resolutions": {
+    "prettier": "2.8.8",
+    "prettier-plugin-tailwindcss": "0.4.1"
+  }
+}

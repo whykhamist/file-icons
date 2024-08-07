@@ -1,0 +1,47 @@
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+@use "@whykhamist/file-icons/css/index.scss";
+
+@layer base {
+  :root {
+    --foreground: 213 13% 14%;
+    --background: 0 0% 100%;
+    --primary: 211 32% 26%;
+    --secondary: 211 46% 69%;
+    --accent: 211 62% 44%;
+
+    --positive: 101 163% 13%;
+    --negative: 225 29% 72%;
+  }
+
+  :root[class="dark"] {
+    --foreground: 213 26% 82%;
+    --background: 215 18% 13%;
+    --primary: 211 32% 74%;
+    --secondary: 211 46% 31%;
+    --accent: 211 62% 56%;
+  }
+}
+
+@layer utilities {
+  html,
+  body {
+    @apply max-h-screen;
+  }
+  div#app {
+    @apply min-h-screen min-w-full;
+  }
+
+  html,
+  body,
+  div#app {
+    @apply m-0 bg-background p-0 text-foreground transition-colors;
+  }
+
+  .flex-auto {
+    min-height: 0;
+    min-width: 0;
+  }
+}
