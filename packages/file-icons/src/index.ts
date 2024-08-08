@@ -1,11 +1,6 @@
 import "./css/index.scss";
 import maps from "./catalog.json";
-
-type ICatalog = Record<string, number>;
-type IOptions = {
-  tag?: "span";
-  classPrefix?: string;
-};
+import type { ICatalog, IOptions } from "./types";
 
 const catalog: ICatalog = maps;
 
@@ -28,6 +23,7 @@ const appendChildPath = (
     el.appendChild(path);
   }
 };
+
 /**
  * Clear child paths from the provided element
  * @param el The element to clear child paths from
