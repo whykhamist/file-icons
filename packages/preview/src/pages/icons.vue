@@ -3,8 +3,6 @@ import { computed, defineAsyncComponent, ref } from "vue";
 import { catalog } from "@whykhamist/file-icons";
 import Fuse from "fuse.js";
 
-const Icon = defineAsyncComponent(() => import("@/components/vFileIcon.vue"));
-
 const name = ref("");
 const search = ref("");
 const fuseSearch = new Fuse(Object.keys(catalog), {
@@ -23,22 +21,8 @@ const searched = computed(() => {
 
 <template>
   <div class="flex flex-col gap-5">
-    <div class="flex flex-col gap-5">
-      <label
-        for="__ICON_NAME__"
-        class="flex cursor-text select-none items-center rounded-lg border border-foreground/50 px-3 py-1"
-      >
-        <input
-          id="__ICON_NAME__"
-          class="min-w-full bg-transparent outline-none"
-          placeholder="Enter file extension"
-          v-model="name"
-        />
-      </label>
-      <Icon :name="name" class="text-8xl text-green-700" />
-    </div>
     <div
-      class="sticky top-0 rounded-lg border border-foreground/25 px-3 py-1 backdrop-blur-md"
+      class="sticky top-10 rounded-lg border border-foreground/25 px-3 py-1 backdrop-blur-md"
     >
       <label
         for="__ICON_SEARCH__"
@@ -67,12 +51,13 @@ const searched = computed(() => {
           class="flex w-40 cursor-pointer flex-col items-center gap-2 rounded-lg border border-foreground/25 px-3 pt-2 hover:bg-foreground/25"
           @click="name = cat"
         >
-          <Icon :name="cat" class="text-8xl" />
+          <FileIcon :name="cat" class="text-8xl" />
           <div class="text-start text-sm font-semibold">
             {{ `${cat}` }}
           </div>
         </div>
       </template>
     </div>
+    <Dialog> </Dialog>
   </div>
 </template>

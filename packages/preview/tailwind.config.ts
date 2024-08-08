@@ -7,14 +7,17 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx,json}"],
   theme: {
     extend: {
+      fontFamily: {
+        lexend: ["Lexend", "sans-serif"],
+      },
       colors: {
         foreground: "hsl(var(--foreground) / <alpha-value>)",
         background: "hsl(var(--background) / <alpha-value>)",
         primary: "hsl(var(--primary) / <alpha-value>)",
         secondary: "hsl(var(--secondary) / <alpha-value>)",
         accent: "hsl(var(--accent) / <alpha-value>)",
-        negative: "var(--negative) / <alpha-value>)",
-        positive: "var(--positive) / <alpha-value>)",
+        negative: "hsl(var(--negative) / <alpha-value>)",
+        positive: "hsl(var(--positive) / <alpha-value>)",
       },
       animation,
       // @ts-expect-error

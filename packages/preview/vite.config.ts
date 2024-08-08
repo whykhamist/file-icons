@@ -14,12 +14,12 @@ export default mergeConfig(
           replacement: "@vue/runtime-core/dist/runtime-core.esm-bundler.js",
         },
         {
-          find: "@whykhamist/file-icons",
-          replacement: resolve(__dirname, "../file-icons/src"),
-        },
-        {
           find: "@",
           replacement: resolve(__dirname, "./src"),
+        },
+        {
+          find: "@whykhamist/file-icons",
+          replacement: resolve(__dirname, "../file-icons/src"),
         },
       ],
     },
