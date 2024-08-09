@@ -1,6 +1,6 @@
 {
   "name": "@whykhamist/file-icons",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "type": "module",
   "exports": {
     ".": {
@@ -9,7 +9,10 @@
       "import": "./dist/index.js"
     },
     "./style.css": "./dist/style.css",
-    "./src/*": "./src/*"
+    "./file-icons.vue": {
+      "types": "./dist/types/vue/file-icons.vue.d.ts",
+      "default": "./src/vue/file-icons.vue"
+    }
   },
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
@@ -24,5 +27,11 @@
     "build:dts": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
     "preview": "vite preview"
   },
-  "devDependencies": {}
+  "peerDependencies": {
+    "vue": "^3.4.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "vue-tsc": "^2.0.29"
+  }
 }
