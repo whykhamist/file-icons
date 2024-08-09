@@ -17,10 +17,6 @@ export default mergeConfig(
           find: "@",
           replacement: resolve(__dirname, "./src"),
         },
-        {
-          find: "@whykhamist/file-icons",
-          replacement: resolve(__dirname, "../file-icons/src"),
-        },
       ],
     },
     optimizeDeps: {
