@@ -6,13 +6,13 @@
     ".": {
       "types": "./dist/types/index.d.ts",
       "require": "./dist/index.umd.js",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.js"
     },
     "./style.css": "./dist/style.css",
     "./src/*": "./src/*"
   },
   "main": "./dist/index.umd.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "files": [
     "dist",
