@@ -1,9 +1,10 @@
 @use "tailwindcss/base";
 @use "tailwindcss/components";
 @use "tailwindcss/utilities";
-@use "./fonts/lexend.scss";
 
-@use "@whykhamist/file-icons/css/index.scss";
+@use "@whykhamist/file-icons/style.css";
+
+@use "./fonts/lexend.scss";
 @use "./fonts/icons.scss";
 @use "sass:meta";
 
@@ -16,22 +17,22 @@ html[class="dark"] {
 
 @layer base {
   :root {
-    --foreground: 213deg 13 14;
-    --background: 0deg 0 100;
-    --primary: 211deg 32 26;
-    --secondary: 211deg 46 69;
-    --accent: 211deg 62 44;
+    --foreground: 213deg 13% 14%;
+    --background: 0deg 0% 100%;
+    --primary: 211deg 32% 26%;
+    --secondary: 211deg 46% 69%;
+    --accent: 211deg 62% 44%;
 
-    --positive: 125deg 42 50;
-    --negative: 3deg 75 60;
+    --positive: 125deg 42% 50%;
+    --negative: 3deg 75% 60%;
   }
 
   :root[class="dark"] {
-    --foreground: 213deg 26 82;
-    --background: 215deg 18 13;
-    --primary: 211deg 32 74;
-    --secondary: 211deg 46 31;
-    --accent: 211deg 62 56;
+    --foreground: 213deg 26% 82%;
+    --background: 215deg 18% 13%;
+    --primary: 211deg 32% 74%;
+    --secondary: 211deg 46% 31%;
+    --accent: 211deg 62% 56%;
   }
 }
 
