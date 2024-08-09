@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "npm run --prefix packages/preview dev",
     "build": "npm run --prefix packages/file-icons build",
-    "build:docs": "npm run --prefix packages/preview build",
+    "build:docs": "npm run --prefix packages/preview build && npm run copy404",
+    "copy404": "copyfiles -f packages/preview/404.html docs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "copyfiles": "^2.4.1",
     "postcss": "^8.4.41",
     "postcss-import": "^16.1.0",
     "sass": "^1.77.8"

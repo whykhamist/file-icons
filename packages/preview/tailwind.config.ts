@@ -4,7 +4,11 @@ import { width as twWidth, height as twHeight } from "./tw/size";
 
 export default {
   darkMode: "class",
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx,json}"],
+  content: [
+    "./index.html",
+    "./404.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx,json}",
+  ],
   theme: {
     extend: {
       fontFamily: {

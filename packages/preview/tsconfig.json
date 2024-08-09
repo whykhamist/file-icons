@@ -15,6 +15,7 @@
     }
   },
   "include": [
+    "404.html",
     "vite.config.ts",
     "tailwind.config.ts",
     "src/**/*.vue",
