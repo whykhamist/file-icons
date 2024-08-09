@@ -7,13 +7,13 @@
   "scripts": {
     "dev": "npm run --prefix packages/preview dev",
     "build": "npm run --prefix packages/file-icons build",
+    "build:docs": "npm run --prefix packages/preview build",
     "preview": "vite preview"
   },
   "dependencies": {
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
-    "@types/node": "^22.1.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "postcss-import": "^16.1.0",

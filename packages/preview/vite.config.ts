@@ -1,4 +1,4 @@
-import { resolve } from "node:path";
+import { fileURLToPath, URL } from "url";
 import { defineConfig, mergeConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import conf from "../../vite.config";
@@ -15,7 +15,7 @@ export default mergeConfig(
         },
         {
           find: "@",
-          replacement: resolve(__dirname, "./src"),
+          replacement: fileURLToPath(new URL("./src", import.meta.url)),
         },
       ],
     },
@@ -31,6 +31,17 @@ export default mergeConfig(
     server: {
       port: 5176,
       open: `http://localhost:5176`, // opens browser window automatically
+    },
+    build: {
+      sourcemap: false,
+      emptyOutDir: true,
+      outDir: "../../docs",
+      rollupOptions: {
+        output: {
+          chunkFileNames: `[hash].js`,
+          assetFileNames: `assets/[hash].[ext]`,
+        },
+      },
     },
     plugins: [vue()],
   })
