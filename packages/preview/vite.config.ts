@@ -7,6 +7,7 @@ import conf from "../../vite.config";
 export default mergeConfig(
   conf,
   defineConfig({
+    base: "/file-icons/",
     resolve: {
       alias: [
         {
