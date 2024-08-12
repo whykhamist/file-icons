@@ -1,30 +1,37 @@
 <script setup lang="ts">
-import { nextTick, onMounted, ref, watch } from "vue";
-import { setPaths } from "../";
+import { nextTick, onMounted, ref, watch, computed } from "vue";
+import { setPaths } from "../fi";
+import type { IOptions } from "../types";
 
-const props = defineProps<{
-  name: string;
-}>();
-
-const el = ref<HTMLElement>();
-
-watch(
-  () => props.name,
-  () => {
-    nextTick(() => {
-      setPaths(el.value);
-    });
+const props = withDefaults(
+  defineProps<{
+    name: string;
+    tag?: string;
+    options?: IOptions;
+  }>(),
+  {
+    tag: "span",
   }
 );
 
-onMounted(() => {
+const el = ref<HTMLElement>();
+
+const options = computed(() => ({
+  tag: props.options?.tag,
+  classPrefix: props.options?.classPrefix,
+}));
+
+const setIconPaths = () => {
   nextTick(() => {
-    setPaths(el.value);
+    setPaths(el.value, options.value);
   });
-});
+};
+
+watch([() => props.name, options], setIconPaths);
+onMounted(setIconPaths);
 </script>
 
 <template>
-  <span ref="el" :class="`fi fi-${name}`"> </span>
+  <component :is="tag" ref="el" :class="`fi fi-${name}`"> </component>
 </template>
 ..
