@@ -28,6 +28,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga";
+
+  * {
+    line-height: 1;
+    &:before {
+      line-height: 1;
+    }
+  }
 }
 
 .fi-coffeelintignore,
