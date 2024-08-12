@@ -11,10 +11,18 @@
     <div class="flex w-full flex-col gap-5 pt-10">
       <div>
         <div class="flex flex-col gap-1 px-3 text-lg">
-          <router-link :to="{ name: 'basic' }"> Getting started </router-link>
-          <router-link :to="{ name: 'api' }"> API Reference </router-link>
-          <router-link :to="{ name: 'icons' }"> Icons </router-link>
-          <router-link :to="{ name: 'vue' }"> Vue Component </router-link>
+          <router-link :to="{ name: 'basic' }" class="hover:underline">
+            Getting started
+          </router-link>
+          <router-link :to="{ name: 'vue' }" class="hover:underline">
+            Vue component
+          </router-link>
+          <router-link :to="{ name: 'api' }" class="hover:underline">
+            API reference
+          </router-link>
+          <router-link :to="{ name: 'icons' }" class="hover:underline">
+            Icons
+          </router-link>
         </div>
       </div>
     </div>

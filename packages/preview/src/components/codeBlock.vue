@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-lg border border-foreground/25 bg-black/50 p-5 font-mono text-sm"
+    class="rounded-lg border border-foreground/25 bg-black bg-opacity-5 p-5 font-mono text-sm dark:bg-opacity-50"
   >
     <slot :html="highlightedCode">
       <pre><code v-html="highlightedCode"></code></pre>

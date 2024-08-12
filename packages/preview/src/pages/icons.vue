@@ -12,6 +12,17 @@ const fuseSearch = new Fuse(Object.keys(catalog), {
   distance: 100,
   minMatchCharLength: 1,
 });
+
+const modal = ref({
+  show: false,
+  name: "",
+});
+
+const openModal = (name: string) => {
+  modal.value.name = name;
+  modal.value.show = true;
+};
+
 const searched = computed(() => {
   return !search.value.trim()
     ? Object.keys(catalog)
@@ -22,7 +33,7 @@ const searched = computed(() => {
 <template>
   <div class="flex flex-col gap-5">
     <div
-      class="sticky top-10 rounded-lg border border-foreground/25 px-3 py-1 backdrop-blur-md"
+      class="sticky top-10 rounded-lg border border-foreground/25 px-3 py-1 backdrop-blur-sm"
     >
       <label
         for="__ICON_SEARCH__"
@@ -49,7 +60,7 @@ const searched = computed(() => {
       <template v-for="cat in searched" :key="`${cat}_${catalog[cat]}`">
         <div
           class="flex w-40 cursor-pointer flex-col items-center gap-2 rounded-lg border border-foreground/25 px-3 pt-2 hover:bg-foreground/25"
-          @click="name = cat"
+          @click="openModal(cat)"
         >
           <FileIcon :name="cat" class="text-8xl" />
           <div class="text-start text-sm font-semibold">
@@ -58,6 +69,22 @@ const searched = computed(() => {
         </div>
       </template>
     </div>
-    <Dialog> </Dialog>
+    <Dialog v-model="modal.show" v-slot="{ close }">
+      <Card class="max-h-screen-95 w-screen-95 max-w-sm rounded-lg">
+        <CardHeader>
+          <div class="flex-auto">Icon preview</div>
+          <button
+            class="m-1 aspect-square rounded-full p-1 leading-none transition-colors hover:bg-foreground/25"
+            @click="close()"
+          >
+            <span class="icon icon-close" />
+          </button>
+        </CardHeader>
+        <CardBody>
+          <IconInfo :name="modal.name" />
+        </CardBody>
+        <CardHeader> </CardHeader>
+      </Card>
+    </Dialog>
   </div>
 </template>

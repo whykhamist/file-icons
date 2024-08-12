@@ -34,13 +34,16 @@ const shake = () => {
 
 <template>
   <teleport to="body">
-    <div v-if="modelValue" class="pointer-events-none fixed inset-0">
+    <div v-if="modelValue" class="pointer-events-none fixed inset-0 z-50">
       <div class="pointer-events-none relative flex h-full w-full items-center">
         <div
           class="pointer-events-auto absolute inset-0 bg-gray-500/25"
           @click.stop="close(false)"
         />
-        <div ref="content" class="pointer-events-auto static z-10 mx-auto">
+        <div
+          ref="content"
+          class="pointer-events-auto static z-10 mx-auto leading-none"
+        >
           <slot :close="() => close(true)"></slot>
         </div>
       </div>

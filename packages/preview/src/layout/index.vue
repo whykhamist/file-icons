@@ -8,20 +8,35 @@ const transitioning = ref(false);
 
 <template>
   <div class="flex min-h-screen flex-col pt-10">
-    <div
-      class="fixed top-0 z-40 flex h-10 w-full items-center bg-background px-3 py-1"
-    >
-      <router-link :to="{ name: 'home' }" class="text-2xl font-semibold">
-        File Icons
-      </router-link>
-      <div class="flex-auto"></div>
-      <div class="flex items-center gap-2">
-        <a href="https://github.com/whykhamist/file-icons" target="_blank">
-          <span class="icon icon-github text-2xl" />
-        </a>
+    <div class="fixed top-0 z-40 h-10 w-full px-5 py-2 backdrop-blur-sm">
+      <div class="flex w-full items-center gap-2">
+        <router-link :to="{ name: 'home' }" class="text-2xl font-semibold">
+          File Icons
+        </router-link>
+        <div class="flex-auto"></div>
+        <div class="flex items-stretch gap-3">
+          <a
+            href="https://github.com/whykhamist/file-icons"
+            target="_blank"
+            class="group flex items-center gap-2"
+          >
+            <span
+              class="icon icon-github text-2xl text-foreground text-opacity-75 transition-colors group-hover:text-opacity-100"
+            />
+            <span
+              class="border-b-2 border-transparent leading-none text-foreground/75 transition-colors group-hover:border-foreground/50"
+            >
+              Github
+              <span class="icon icon-call_made text-xs" />
+            </span>
+          </a>
+          <ThemeToggle
+            class="text-2xl text-foreground text-opacity-75 hover:text-opacity-100"
+          />
+        </div>
       </div>
     </div>
-    <div class="flex flex-auto">
+    <div class="relative mx-auto flex max-w-5xl flex-auto">
       <SideBar />
       <div class="flex-auto">
         <router-view v-slot="{ Component }">

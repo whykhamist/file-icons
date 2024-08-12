@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TypeDeclaration from "../../../file-icons/src/types.ts?raw";
+
 const setPaths = [
   {
     name: "src",
@@ -54,23 +56,26 @@ const clearChildPaths = [
   <div class="flex flex-col gap-5">
     <div class="text-3xl font-semibold">API Reference</div>
     <div class="text-2xl font-semibold">Objects</div>
-    <API
-      api="catalog"
-      type="ICatalog"
-      description="Contains the list of icon names with their number of paths."
-      class="px-3"
-    />
+    <div id="catalog" v>
+      <API
+        api="catalog"
+        type="ICatalog"
+        description="Contains the list of icon names with their number of paths."
+        class="px-3"
+      />
+    </div>
     <div class="border-b border-foreground/25 text-2xl font-semibold">
       Methods
     </div>
-
-    <API
-      api="setPaths(src, options)"
-      type="void"
-      description="This function adds the necessary number of paths to the icon rendering element. (Uses the <span class='rounded-lg border border-foreground/25 bg-foreground/5 px-2 py-0.5'>appendChildPath</span> & <span class='rounded-lg border border-foreground/25 bg-foreground/5 px-2 py-0.5'>clearChildPaths</span> functions)"
-      :params="setPaths"
-      class="px-3"
-    />
+    <div id="set-path">
+      <API
+        api="setPaths(src, options)"
+        type="void"
+        description="This function adds the necessary number of paths to the icon rendering element. (Uses the <span class='rounded-lg border border-foreground/25 bg-foreground/5 px-2 py-0.5'>appendChildPath</span> & <span class='rounded-lg border border-foreground/25 bg-foreground/5 px-2 py-0.5'>clearChildPaths</span> functions)"
+        :params="setPaths"
+        class="px-3"
+      />
+    </div>
 
     <API
       api="appendChildPath(el, pathCtr, tag, classPrefix)"
@@ -87,5 +92,11 @@ const clearChildPaths = [
       :params="clearChildPaths"
       class="px-3"
     />
+
+    <div class="flex flex-col gap-2">
+      <div class="text-3xl">Type Declaration</div>
+
+      <CodeBlock :code="TypeDeclaration" />
+    </div>
   </div>
 </template>
