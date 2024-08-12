@@ -1,13 +1,3 @@
-<template>
-  <div
-    class="rounded-lg border border-foreground/25 bg-black bg-opacity-5 p-5 font-mono text-sm dark:bg-opacity-50"
-  >
-    <slot :html="highlightedCode">
-      <pre><code v-html="highlightedCode"></code></pre>
-    </slot>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { computed, ref, useSlots } from "vue";
 import hljs from "highlight.js/lib/core";
@@ -53,3 +43,13 @@ const formatCode = (code: string): string => {
   return hljs.highlightAuto(code).value;
 };
 </script>
+
+<template>
+  <div
+    class="overflow-auto rounded-lg border border-foreground/25 bg-black bg-opacity-5 p-5 font-mono text-sm dark:bg-opacity-50"
+  >
+    <slot :html="highlightedCode">
+      <pre><code v-html="highlightedCode"></code></pre>
+    </slot>
+  </div>
+</template>

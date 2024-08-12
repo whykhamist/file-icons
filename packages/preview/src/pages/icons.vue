@@ -33,7 +33,7 @@ const searched = computed(() => {
 <template>
   <div class="flex flex-col gap-5">
     <div
-      class="sticky top-10 rounded-lg border border-foreground/25 px-3 py-1 backdrop-blur-sm"
+      class="sticky top-12 rounded-lg border border-foreground/25 px-3 py-1 backdrop-blur-lg"
     >
       <label
         for="__ICON_SEARCH__"

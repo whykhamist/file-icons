@@ -10,16 +10,16 @@ import SetPathsImport from "./samples/setPath.ex?raw";
     <div class="">
       <CodeBlock :code="BasicSample" />
     </div>
-    <FAQ title="Why the child elements?">
+    <FAQ id="children" title="Why the child elements?">
       The SVG files have more than one color, since font glyphs can only have
       one color, it is necessary to use multiple paths for multicolor icons.
     </FAQ>
-    <FAQ title="How do I know how many paths the icon need?">
+    <FAQ id="path-ctr" title="How do I know how many paths the icon need?">
       The package exports a "catalog" object that contains the number of paths
       for each icon.
     </FAQ>
     <CodeBlock :code="CatalogImport" class="mx-3" />
-    <FAQ title="Is there a quicker way to use the icons?">
+    <FAQ id="quick" title="Is there a quicker way to use the icons?">
       Yes, the package also exports a "setPaths" function. You can use it to set
       the number of paths for each icon. By default it will search elements with
       the class

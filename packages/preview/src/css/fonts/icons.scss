@@ -26,6 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga";
+
+  &:before {
+    line-height: 1;
+  }
 }
 
 .icon-github:before {
@@ -34,12 +38,15 @@
 .icon-call_made:before {
   content: "\e901";
 }
-.icon-close:before {
+.icon-clear:before {
   content: "\e902";
 }
 .icon-wb_sunny:before {
   content: "\e903";
 }
-.icon-nightlight_round:before {
+.icon-menu:before {
   content: "\e904";
+}
+.icon-nightlight_round:before {
+  content: "\e905";
 }
