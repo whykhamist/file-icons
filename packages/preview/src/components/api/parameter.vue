@@ -11,21 +11,21 @@ const props = defineProps<ApiParameterProps>();
     >
       {{ name }}
     </span>
-    <div class="flex flex-col gap-5 px-5">
-      <div class="fllex flex-col gap-3">
-        <div>
+    <div class="flex flex-col gap-3 px-5">
+      <div class="flex flex-col gap-3">
+        <div class="flex items-center gap-2">
           Type:
           <div class="inline-block">
             <CodeBlock :code="type" class="px-2 py-0.5" />
           </div>
         </div>
-        <div v-if="!!defaultValue">
+        <div v-if="!!defaultValue" class="flex items-center gap-2">
           Default:
           <div class="inline-block">
             <CodeBlock :code="defaultValue" class="px-2 py-0.5" />
           </div>
         </div>
-        <div v-if="required != undefined">
+        <div v-if="required != undefined" class="flex items-center gap-2">
           Required:
           <div class="inline-block">
             <CodeBlock :code="`${required}`" class="px-2 py-0.5" />

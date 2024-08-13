@@ -19,11 +19,8 @@ const ApiReference = defineAsyncComponent(() => import("./apiReference.vue"));
       </a>
     </div>
     <div>
-      A custom font featuring icons for several types of files. It lets you show
-      easily understood file type icons.
-    </div>
-    <div class="border-l-4 border-foreground/25 bg-foreground/5 pl-3 italic">
-      This package uses the Vivid icons from
+      A custom font featuring icons for several types of files. This package
+      uses the Vivid icons from
       <a
         href="https://github.com/dmhendricks/file-icon-vectors"
         class="rounded-lg font-semibold leading-none text-blue-500 hover:underline"
@@ -32,7 +29,10 @@ const ApiReference = defineAsyncComponent(() => import("./apiReference.vue"));
         file-icons-vector
       </a>
     </div>
-    <div class="flex flex-col gap-2 line-through">
+    <div
+      class="border-l-4 border-foreground/25 bg-foreground/5 pl-3 italic"
+    ></div>
+    <div class="flex flex-col gap-2">
       <div class="text-2xl font-semibold">Installation</div>
       <div>
         <pre
