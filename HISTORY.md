@@ -1,3 +1,8 @@
+### 1.0.2 / 08-13-2024
+
+    - Update Readme & Decomentation
+    - Fixed typo
+
 ### 1.0.1 / 08-13-2024
 
     - Add readme file
