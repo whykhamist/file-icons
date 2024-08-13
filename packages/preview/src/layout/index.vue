@@ -37,7 +37,7 @@ onMounted(() => {
     <div
       class="fixed top-0 z-40 h-12 w-full border-b border-foreground/25 px-5 py-2 backdrop-blur-lg md:border-transparent"
     >
-      <div class="flex w-full items-center gap-2">
+      <div class="mx-auto flex w-full max-w-7xl items-center gap-2">
         <button
           class="aspect-square rounded-full p-1 leading-none md:hidden"
           @click="sbar = !sbar"

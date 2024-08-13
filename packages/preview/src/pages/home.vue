@@ -34,11 +34,7 @@ const ApiReference = defineAsyncComponent(() => import("./apiReference.vue"));
     ></div>
     <div class="flex flex-col gap-2">
       <div class="text-2xl font-semibold">Installation</div>
-      <div>
-        <pre
-          class="rounded-lg border border-foreground/25 bg-black/50 px-3 py-1"
-        ><span class="select-none">$ </span>npm install @whykhamist/file-icons</pre>
-      </div>
+      <CodeBlock code="$ npm install @whykhamist/file-icon" class="px-3 py-1" />
     </div>
   </div>
 </template>
