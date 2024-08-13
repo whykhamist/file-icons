@@ -1,6 +1,6 @@
 {
   "name": "@whykhamist/file-icons",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "exports": {
     ".": {
@@ -10,6 +10,8 @@
     },
     "./style.css": "./dist/style.css"
   },
+  "repository": "whykhamist/file-icons",
+  "homepage": "https://whykhamist.github.io/file-icons",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
